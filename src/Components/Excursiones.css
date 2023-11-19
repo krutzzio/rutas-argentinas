@@ -1,0 +1,17 @@
+.excursiones{
+    margin: 15px auto;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.excursionesComponent{
+    text-align: center;
+}
+
+.zonaActual{
+    color: #ca2121;
+    font-weight: 1000;
+}
