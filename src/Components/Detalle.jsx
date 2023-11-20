@@ -1,34 +1,34 @@
 import EXCURSIONES from "../Constants/excursiones"
+import "./Detalle.css"
 
 import { useParams } from "react-router"
 import { useContext, useState } from "react";
+import Context from "../Context/Context";
 import { Link } from "react-router-dom"
 
-import "./Detalle.css"
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Context from "../Context/Context";
 
 
 export function Detalle() {
 
     const { id } = useParams()
-
     const excursionDetalle = EXCURSIONES.find((elem) => {
         return elem.id === Number(id)
     })
     const imgDetalle = require(`../images/${excursionDetalle.imagen}`)
 
-    const {setListaRutas} = useContext(Context)
-    const {listaRutas} = useContext(Context)
+    const { setListaRutas } = useContext(Context)
+    const { listaRutas } = useContext(Context)
+    let newListaRutas = [...listaRutas]
 
-    const [añadido, setAñadido] = useState(listaRutas.includes(excursionDetalle.id))
+    const [añadido, setAñadido] = useState(newListaRutas.includes(excursionDetalle.id))
 
     const añadirRuta = () => {
+        if (añadido) {setListaRutas(newListaRutas.filter(elem => elem !== excursionDetalle.id))}
+        else if (!añadido) {setListaRutas([...newListaRutas, excursionDetalle.id])}
         setAñadido(!añadido)
-        if(añadido) setListaRutas([...listaRutas], excursionDetalle.id)
-        else if(!añadido) setListaRutas([...listaRutas], excursionDetalle.id)
     }
 
     return (
@@ -45,7 +45,6 @@ export function Detalle() {
                     </div>)
                     : (<div className="boton añadir" onClick={añadirRuta}>
                         <AddIcon />Añadir a la ruta
-
                     </div>)
             }
             <div className="volver">
