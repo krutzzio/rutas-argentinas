@@ -1,13 +1,14 @@
 import EXCURSIONES from "../Constants/excursiones"
 
 import { useParams } from "react-router"
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom"
 
 import "./Detalle.css"
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useState } from "react";
+import Context from "../Context/Context";
 
 
 export function Detalle() {
@@ -17,10 +18,18 @@ export function Detalle() {
     const excursionDetalle = EXCURSIONES.find((elem) => {
         return elem.id === Number(id)
     })
-
     const imgDetalle = require(`../images/${excursionDetalle.imagen}`)
 
-    const [añadido, setAñadido] = useState(false)
+    const {setListaRutas} = useContext(Context)
+    const {listaRutas} = useContext(Context)
+
+    const [añadido, setAñadido] = useState(listaRutas.includes(excursionDetalle.id))
+
+    const añadirRuta = () => {
+        setAñadido(!añadido)
+        if(añadido) setListaRutas([...listaRutas], excursionDetalle.id)
+        else if(!añadido) setListaRutas([...listaRutas], excursionDetalle.id)
+    }
 
     return (
         <div className="detalles">
@@ -30,12 +39,13 @@ export function Detalle() {
             <div className="precio">{`${excursionDetalle.precio}€`}</div>
             {
                 añadido
-                    ? (<div className="boton eliminar" onClick={() => setAñadido(false)}>
+                    ? (<div className="boton eliminar" onClick={añadirRuta}>
                         <RemoveIcon />
                         Eliminar de la ruta
                     </div>)
-                    : (<div className="boton añadir" onClick={() => setAñadido(true)}>
+                    : (<div className="boton añadir" onClick={añadirRuta}>
                         <AddIcon />Añadir a la ruta
+
                     </div>)
             }
             <div className="volver">

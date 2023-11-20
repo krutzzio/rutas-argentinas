@@ -2,9 +2,10 @@ import { useState } from "react";
 import Context from "./Context";
 
 const Provider = ({ children }) => {
-    const [precioFinal, setprecioFinal] = useState(0);
+    const [listaRutas, setListaRutas] = useState([]);
+
     return (
-        <Context.Provider value={{ precioFinal, setprecioFinal }}>
+        <Context.Provider value={{ listaRutas, setListaRutas}}>
             {children}
         </Context.Provider>
     )

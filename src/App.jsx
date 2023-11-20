@@ -7,21 +7,24 @@ import { Rutas } from './Components/Rutas';
 import { Detalle } from './Components/Detalle';
 
 import './App.css';
+import Provider from './Context/Provider';
 
 
 function App() {
   return (
     <div className='app'>
-      <BrowserRouter>
-        <Nav />
-        <Routes>
-          <Route path='/' element={<MainPage />} />
-          <Route path='/excursiones/:zona' element={<Excursiones />} />
-          <Route path='/detalles/:id' element={<Detalle />} />
-          <Route path='/ruta' element={<Rutas />} />
-          <Route path='/*' element={<Navigate to='/'/>}/>
-        </Routes>
-      </BrowserRouter>
+      <Provider>
+        <BrowserRouter>
+          <Nav />
+          <Routes>
+            <Route path='/' element={<MainPage />} />
+            <Route path='/excursiones/:zona' element={<Excursiones />} />
+            <Route path='/detalles/:id' element={<Detalle />} />
+            <Route path='/ruta' element={<Rutas />} />
+            <Route path='/*' element={<Navigate to='/' />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
