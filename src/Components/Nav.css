@@ -1,7 +1,25 @@
-.Navbar{
+.Navbar {
     display: flex;
     justify-content: center;
     gap: 1em;
     align-items: center;
     font-size: 2em;
+    background-color: #0d282b;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.Navbar a {
+    text-decoration: none;
+    color:white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.Navbar a:hover {
+    background-color: #0f4e52;
+}
+
+.active{
+    background-color: #1e4043;
 }

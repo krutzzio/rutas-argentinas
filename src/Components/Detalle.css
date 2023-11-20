@@ -1,0 +1,73 @@
+.detalles{
+    position: relative;
+    text-align: center;
+    margin: 15px auto;
+    background-color: #b4d5d9;
+    border-radius: 15px;
+    width: 50vw;
+    padding: 1em;
+}
+
+.detalles img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.precio{
+    position: absolute;
+    top:150px;
+    left: 30px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.boton{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top:150px;
+    right: 30px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.añadir{
+    background-color:#10a918;
+}
+
+.añadir:hover{
+    background-color:#0c7411;
+}
+
+.eliminar{
+    background-color:#b02525;
+}
+
+.eliminar:hover{
+    background-color:#7c0707;
+}
+
+.volver{
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    background-color:#37777e;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.volver a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}

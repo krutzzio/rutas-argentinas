@@ -1,5 +1,4 @@
 .excursion {
-    border: 1px solid black;
     border-radius: 15px;
     padding: 10px;
     text-align: center;
@@ -31,14 +30,12 @@
     right: 5%;
     height: 30px;
     transition: 0.2s;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .link:hover{
     background-color:#569aa1;
 }
-
-
 
 .excursion img {
     width: 100%;
@@ -46,5 +43,5 @@
 }
 
 h2 {
-    font-weight: 500;
+    font-weight: 700;
 }
