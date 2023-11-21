@@ -26,8 +26,8 @@ export function Detalle() {
     const [añadido, setAñadido] = useState(newListaRutas.includes(excursionDetalle.id))
 
     const añadirRuta = () => {
-        if (añadido) {setListaRutas(newListaRutas.filter(elem => elem !== excursionDetalle.id))}
-        else if (!añadido) {setListaRutas([...newListaRutas, excursionDetalle.id])}
+        if (añadido) { setListaRutas(newListaRutas.filter(elem => elem !== excursionDetalle.id)) }
+        else if (!añadido) { setListaRutas([...newListaRutas, excursionDetalle.id]) }
         setAñadido(!añadido)
     }
 

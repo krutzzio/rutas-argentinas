@@ -1,9 +1,11 @@
 .main{
     margin: auto;
     text-align: center;
-    font-size: 2.25em;
+    font-size: 2em;
 }
 
 .main img{
     border-radius: 15px;
+    width: 50%;
+    min-width: 700px;
 }
