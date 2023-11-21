@@ -1,15 +1,18 @@
 import { NavLink } from "react-router-dom"
-import ZONAS from "../Constants/zonas"
 import "./Nav.css"
+import { useContext } from "react"
+import Context from "../Context/Context"
 
 
 export function Nav() {
+
+    const {zonas} = useContext(Context)
 
     return (
         <nav className="Navbar">
             <NavLink to='/'>Inicio</NavLink>
             {
-                ZONAS.map(({ zona, descripcion }) => {
+                zonas.map(({ zona, descripcion }) => {
                     return <NavLink key={zona} to={`/excursiones/${zona}`}>{`${descripcion}`}</NavLink>
                 })
             }
