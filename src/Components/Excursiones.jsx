@@ -19,7 +19,7 @@ export function Excursiones() {
             <div className="excursiones">
                 {excursionesZona.length === 0
                     ? (<h2>No hay excursiones para <span className="zonaActual">{zonaActual.descripcion}</span></h2>)
-                    : (excursionesZona.map(info => <Excursion key={info.id} info={info} />)) 
+                    : (excursionesZona.map(info => <Excursion key={info.id} info={info} />))
                 }
             </div>
         </div>

@@ -1,34 +1,36 @@
 import { useContext } from "react"
 import Context from "../Context/Context"
-import EXCURSIONES from "../Constants/excursiones"
 
 import "./Rutas.css"
+import { Ruta } from "./Ruta"
 
 
 export function Rutas() {
 
     const { listaRutas } = useContext(Context)
 
-    const excursionsAdded = EXCURSIONES.filter(elem => listaRutas.includes(elem.id))
 
-    const images = excursionsAdded.map(elem => require(`../images/${elem.imagen}`))
+    let precio = 0
 
-    console.log(excursionsAdded)
+    listaRutas.forEach(rutas => {
+        return (
+            precio += rutas.precio
+        )
+    })
+
     return (
         <div className="rutas">
             <h1>RUTAS</h1>
             <div className="lista-rutas">
                 {
-                    excursionsAdded.map(rutas => {
+                    listaRutas.map(rutas => {
                         return (
-                            <div key={rutas.imagen} >
-                                <img src={images} alt="" />
-                                <h1>{rutas.nombre}</h1>
-                            </div>
+                            <Ruta key={rutas.id} excursion={rutas} />
                         )
                     })
                 }
             </div>
+            <h3>Precio total: {precio}€</h3>
         </div>
     )
 }

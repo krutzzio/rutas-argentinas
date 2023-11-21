@@ -21,13 +21,12 @@ export function Detalle() {
 
     const { setListaRutas } = useContext(Context)
     const { listaRutas } = useContext(Context)
-    let newListaRutas = [...listaRutas]
 
-    const [añadido, setAñadido] = useState(newListaRutas.includes(excursionDetalle.id))
+    const [añadido, setAñadido] = useState(listaRutas.includes(excursionDetalle.id))
 
     const añadirRuta = () => {
-        if (añadido) { setListaRutas(newListaRutas.filter(elem => elem !== excursionDetalle.id)) }
-        else if (!añadido) { setListaRutas([...newListaRutas, excursionDetalle.id]) }
+        if (añadido) { setListaRutas(listaRutas.filter(elem => elem !== excursionDetalle)) }
+        else if (!añadido) { setListaRutas([...listaRutas, excursionDetalle]) }
         setAñadido(!añadido)
     }
 

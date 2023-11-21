@@ -4,7 +4,6 @@ import Context from "../Context/Context";
 import { useContext } from "react";
 import { Link } from "react-router-dom"
 
-
 import InfoIcon from '@mui/icons-material/Info';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 
@@ -15,7 +14,8 @@ export function Excursion({ info }) {
 
     const { listaRutas } = useContext(Context)
 
-    const addedRute = listaRutas.includes(info.id)
+    const addedRute = listaRutas.includes(info)
+
 
     return (
         <div className="excursion">

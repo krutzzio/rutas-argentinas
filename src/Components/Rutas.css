@@ -2,4 +2,11 @@
     margin: 0 auto;
     width: 75vw;
     text-align: center;
+
+}
+
+.lista-rutas{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
