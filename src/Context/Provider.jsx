@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Context from "./Context";
-
-import EXCURSIONES from "../Constants/excursiones"
 
 
 const Provider = ({ children }) => {
-    const [listaRutas, setListaRutas] = useState([EXCURSIONES[1],EXCURSIONES[7]]);
+    const [listaRutas, setListaRutas] = useState();
 
+    useEffect(()=>{
+        const storage = localStorage.getItem("listaRutas")
+        const rutas = storage ? JSON.parse(storage) : []
+        setListaRutas(rutas)
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("listaRutas",JSON.stringify(listaRutas))
+    }, [listaRutas])
+  
     return (
         <Context.Provider value={{ listaRutas, setListaRutas}}>
             {children}

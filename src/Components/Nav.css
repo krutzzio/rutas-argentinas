@@ -17,9 +17,9 @@
 }
 
 .Navbar a:hover {
-    background-color: #909292;
+    background-color: #dfdfdf;
 }
 
 .active{
-    background-color: #768485;
+    background-color: #b9b9b9;
 }

@@ -1,12 +1,27 @@
-.rutas{
+.rutas {
     margin: 0 auto;
     width: 75vw;
     text-align: center;
-
 }
 
-.lista-rutas{
+.lista-rutas {
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+.imprimir {width: 150px;}
+
+@media print {
+    .Navbar {
+        display: none;
+    }
+
+    .imprimir {
+        display: none;
+    }
+
+    .App {
+        margin-top: 50px
+    }
 }

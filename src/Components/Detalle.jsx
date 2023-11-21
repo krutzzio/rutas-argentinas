@@ -22,7 +22,7 @@ export function Detalle() {
     const { setListaRutas } = useContext(Context)
     const { listaRutas } = useContext(Context)
 
-    const [añadido, setAñadido] = useState(listaRutas.includes(excursionDetalle.id))
+    const [añadido, setAñadido] = useState(false)
 
     const añadirRuta = () => {
         if (añadido) { setListaRutas(listaRutas.filter(elem => elem !== excursionDetalle)) }

@@ -9,7 +9,6 @@ export function Rutas() {
 
     const { listaRutas } = useContext(Context)
 
-
     let precio = 0
 
     listaRutas.forEach(rutas => {
@@ -18,19 +17,28 @@ export function Rutas() {
         )
     })
 
+    const imprimir = () => { window.print() }
+
     return (
         <div className="rutas">
             <h1>RUTAS</h1>
-            <div className="lista-rutas">
                 {
-                    listaRutas.map(rutas => {
-                        return (
-                            <Ruta key={rutas.id} excursion={rutas} />
+                    listaRutas.length !== 0
+
+                        ? (
+                            <>
+                                <div className="lista-rutas">
+                                    {listaRutas.map(rutas => {
+                                        return (
+                                            <Ruta key={rutas.id} excursion={rutas} />
+                                        )
+                                    })}
+                                </div>
+                                <h3>Precio total: {precio}€</h3>
+                                <button className='imprimir' onClick={imprimir}>Imprimir</button>                            </>
                         )
-                    })
+                        : (<h2>NO HAY EXCURSIONES AÑADIDAS</h2>)
                 }
-            </div>
-            <h3>Precio total: {precio}€</h3>
         </div>
     )
 }

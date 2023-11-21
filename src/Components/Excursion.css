@@ -1,5 +1,4 @@
 .excursion {
-    border-radius: 15px;
     padding: 10px;
     text-align: center;
     width: 45%;
@@ -9,10 +8,11 @@
     transition: 0.2s;
     background: #b9d2d4;
     position: relative;
+    border-radius: 10px;
 }
 
 .excursion:hover {
-    background-color: #738183;
+    box-shadow: 2px 2px 20px 3px #4d5657;
 }
 
 .link {
@@ -40,7 +40,6 @@
 
 .excursion img {
     width: 100%;
-    border-radius: 15px;
 }
 
 h2 {

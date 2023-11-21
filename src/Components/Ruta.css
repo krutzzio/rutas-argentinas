@@ -1,11 +1,16 @@
 .ruta {
-    border: 1px solid black;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
     background-color: #cfdee0;
     height: 25vh;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+.ruta:hover{
+    box-shadow: 2px 2px 20px 3px #4d5657;
 }
 
 .ruta img {
@@ -16,8 +21,20 @@
 .info-ruta {
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    width: 50%;
     gap: 1em;
+}
+
+.more-info{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    gap: 1em;
+    width: 50%;
+}
+
+.more-info h3 {
+    margin: 0;
 }
 
 .removeRuta {
@@ -31,9 +48,16 @@
     font-weight: 600;
     font-size: 1em;
     cursor: pointer;
+    padding: 5px;
+    color: white;
 }
 
 .removeRuta:hover {
     background-color: #7c0707;
-    color: white
+}
+
+@media print {
+    .removeRuta {
+        display: none;
+    }
 }
