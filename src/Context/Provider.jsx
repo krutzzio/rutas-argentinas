@@ -7,7 +7,6 @@ const Provider = ({ children }) => {
 
     useEffect(() => {
         const storage = localStorage.getItem("listaRutas")
-        console.log(JSON.parse(storage), storage)
         const rutas = storage ? JSON.parse(storage) : []
         setListaRutas(rutas)
     }, [])
@@ -16,6 +15,8 @@ const Provider = ({ children }) => {
         localStorage.setItem("listaRutas", JSON.stringify(listaRutas))
     }, [listaRutas])
 
+
+    //Para empezar API xmysql -h localhost -o 3306 -u root -d argentina
     const [zonas, setZonas] = useState([])
     const API_ZONAS = 'http://localhost:3000/api/zonas'
 
