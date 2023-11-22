@@ -14,9 +14,10 @@ export function Excursion({ info }) {
 
     const { listaRutas } = useContext(Context)
 
-    const addedRute = listaRutas.includes(info)
-
-
+    const addedRute = listaRutas.some(excursion => {
+        return excursion.id === info.id
+    })
+    
     return (
         <div className="excursion">
             <div>

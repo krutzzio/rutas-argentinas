@@ -2,7 +2,7 @@ import EXCURSIONES from "../Constants/excursiones"
 import "./Detalle.css"
 
 import { useParams } from "react-router"
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Context from "../Context/Context";
 import { Link } from "react-router-dom"
 
@@ -22,7 +22,9 @@ export function Detalle() {
     const { setListaRutas } = useContext(Context)
     const { listaRutas } = useContext(Context)
 
-    const [añadido, setAñadido] = useState(listaRutas.includes(excursionDetalle))
+    const [añadido, setAñadido] = useState(listaRutas.some(excursion => {
+        return excursion.id === excursionDetalle.id
+    }))
 
     const añadirRuta = () => {
         if (añadido) { setListaRutas(listaRutas.filter(elem => elem !== excursionDetalle)) }
