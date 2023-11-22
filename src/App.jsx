@@ -5,6 +5,7 @@ import { MainPage } from './Components/MainPage';
 import { Excursiones } from './Components/Excursiones';
 import { Rutas } from './Components/Rutas';
 import { Detalle } from './Components/Detalle';
+import { Alta } from './Components/Alta';
 
 import './App.css';
 import Provider from './Context/Provider';
@@ -21,6 +22,7 @@ function App() {
             <Route path='/excursiones/:zona' element={<Excursiones />} />
             <Route path='/detalles/:id' element={<Detalle />} />
             <Route path='/ruta' element={<Rutas />} />
+            <Route path='/alta' element={<Alta />} />
             <Route path='/*' element={<Navigate to='/' />} />
           </Routes>
         </BrowserRouter>

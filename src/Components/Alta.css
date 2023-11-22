@@ -1,0 +1,8 @@
+label {
+    font-weight: bold;
+}
+
+.errores {
+    padding: 5px;
+    color: red
+}

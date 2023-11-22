@@ -17,6 +17,7 @@ export function Nav() {
                 })
             }
             <NavLink to='/ruta'>Rutas</NavLink>
+            <NavLink to='/alta'>Alta Ruta</NavLink>
         </nav>
     )
 }
