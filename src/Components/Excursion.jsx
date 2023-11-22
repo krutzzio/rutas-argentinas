@@ -14,8 +14,8 @@ export function Excursion({ info }) {
 
     const { listaRutas } = useContext(Context)
 
-    const addedRute = listaRutas.some(excursion => {
-        return excursion.id === info.id
+    const addedRute = listaRutas.find(excursion => {
+        return excursion.idexcursion === info.idexcursion
     })
     
     return (
@@ -25,7 +25,7 @@ export function Excursion({ info }) {
                 <p>{info.situacion}</p>
             </div>
             <img src={img} alt={`Imagen destino ${info.nombre}`} />
-            <Link className="link" to={`/detalles/${info.id}`}><InfoIcon /> <span>Más información</span></Link>
+            <Link className="link" to={`/detalles/${info.idexcursion}`}><InfoIcon /> <span>Más información</span></Link>
             {
                 addedRute
                     ? (<div className="rute-in"><AttachFileIcon /></div>)

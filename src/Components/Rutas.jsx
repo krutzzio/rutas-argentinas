@@ -30,7 +30,7 @@ export function Rutas() {
                                 <div className="lista-rutas">
                                     {listaRutas.map(rutas => {
                                         return (
-                                            <Ruta key={rutas.id} excursion={rutas} />
+                                            <Ruta key={rutas.idexcursion} excursion={rutas} />
                                         )
                                     })}
                                 </div>

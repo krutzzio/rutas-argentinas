@@ -12,8 +12,8 @@ export function Nav() {
         <nav className="Navbar">
             <NavLink to='/'>Inicio</NavLink>
             {
-                zonas.map(({ zona, descripcion }) => {
-                    return <NavLink key={zona} to={`/excursiones/${zona}`}>{`${descripcion}`}</NavLink>
+                zonas.map((item) => {
+                    return <NavLink key={item.zona} to={`/excursiones/${item.idzona}`}>{`${item.descripcion}`}</NavLink>
                 })
             }
             <NavLink to='/ruta'>Rutas</NavLink>
