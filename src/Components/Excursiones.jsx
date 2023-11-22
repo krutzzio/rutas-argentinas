@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "react-router"
 
 import { Excursion } from "./Excursion"
@@ -8,7 +8,7 @@ import "./Excursiones.css"
 export function Excursiones() {
 
     const { zona } = useParams()
-    
+
     const [excursionAPI, setExcursionAPI] = useState([])
 
     useEffect(() => {
@@ -24,6 +24,7 @@ export function Excursiones() {
             .catch((error) => window.alert(error))
     }, [zona])
 
+    console.log(excursionAPI)
     return (
         <div className="excursionesComponent">
             <h1>EXCURSIONES</h1>
