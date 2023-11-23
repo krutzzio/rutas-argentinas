@@ -28,7 +28,7 @@ export function Excursion({ info }) {
             <Link className="link" to={`/detalles/${info.idexcursion}`}><InfoIcon /> <span>Más información</span></Link>
             {
                 addedRute
-                    ? (<div className="rute-in"><AttachFileIcon /></div>)
+                    ? (<div className="rute-in"><AttachFileIcon /><span className="added">Ruta añadida</span></div>)
                     : <></>
             }
         </div>

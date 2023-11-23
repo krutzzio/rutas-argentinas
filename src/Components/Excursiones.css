@@ -1,8 +1,3 @@
-.excursionesComponent h1{
-    font-size: 2.5em;
-    margin: 45px;
-}
-
 .excursiones{
     margin: 0 auto;
     width: 75vw;
@@ -10,6 +5,11 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1em;
+}
+
+.excursionesComponent h1{
+    font-size: 2.5em;
+    margin: 45px;
 }
 
 .excursionesComponent{

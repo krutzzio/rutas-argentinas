@@ -62,6 +62,14 @@ h2 {
     transition: 0.2s;
 }
 
-.rute-in:hover{
+.rute-in:hover {
     width: 200px;
+}
+
+.added {
+    display: none;
+}
+
+.rute-in:hover .added{
+    display: inline;
 }

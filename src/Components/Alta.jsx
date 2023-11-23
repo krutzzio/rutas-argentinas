@@ -46,61 +46,63 @@ export function Alta() {
 
 
     return (
-        <>
+        <div className="form">
             <form encType='multipart/form-data' onSubmit={handleSubmit(recuperarDatos)}>
-                <h2>Alta de excursión</h2>
-                <div className="mb-3">
-                    <select className="form-select" {...register('idzona', { required: true })}>
-                        <option defaultValue value=''>Selecciona zona</option>
-                        {
-                            zonas.map((zona, i) =>
-                                <option key={i} value={zona.idzona}>{zona.descripcion}</option>
-                            )
-                        }
-                    </select>
-                </div>
-                {errors.idzona?.type === 'required' &&
-                    <div className='errores'>Zona excursión obligatoria</div>
-                }
-                <div className="mb-3">
-                    <label className="form-label">Nombre excursión</label>
-                    <input type="text" className="form-control" {...register('nombre', { required: true })} />
-                </div>
-                {errors.nombre?.type === 'required' &&
-                    <div className='errores'>Zona excursión obligatoria</div>
-                }
-                <div className="mb-3">
-                    <label className="form-label">Imagen</label>
-                    <input type="file" className="form-control" {...register('imagen', { required: true })} />
-                </div>
-                {errors.imagen?.type === 'required' &&
-                    <div className='errores'>Zona excursión obligatoria</div>
-                }
-                <div className="mb-3">
-                    <label className="form-label">Situación</label>
-                    <textarea className="form-control" rows="3" {...register('situacion', { required: true })}></textarea>
-                </div>
-                {errors.situacion?.type === 'required' &&
-                    <div className='errores'>Zona excursión obligatoria</div>
-                }
-                <div className="mb-3">
-                    <label className="form-label">Servicio</label>
-                    <textarea className="form-control" rows="3" {...register('servicio', { required: true })}></textarea>
-                </div>
-                {errors.servicio?.type === 'required' &&
-                    <div className='errores'>Zona excursión obligatoria</div>
-                }
-                <div className="mb-3">
-                    <label className="form-label">Precio excursión</label>
-                    <input type="number" className="form-control" {...register('precio', { required: true })} />
-                </div>
-                {errors.precio?.type === 'required' &&
-                    <div className='errores'>Zona excursión obligatoria</div>
-                }
-                <div className="mb-3">
-                    <button type="submit" className="btn btn-primary">Alta de excursión</button>
+                <h1>Alta de excursión</h1>
+                <div className="form-quest">
+                    <div className="mb-3">
+                        <select className="form-select" {...register('idzona', { required: true })}>
+                            <option defaultValue value=''>Selecciona zona</option>
+                            {
+                                zonas.map((zona, i) =>
+                                    <option key={i} value={zona.idzona}>{zona.descripcion}</option>
+                                )
+                            }
+                        </select>
+                    </div>
+                    {errors.idzona?.type === 'required' &&
+                        <div className='errores'>Zona excursión obligatoria</div>
+                    }
+                    <div className="mb-3">
+                        <label className="form-label">Nombre excursión</label>
+                        <input type="text" className="form-control" {...register('nombre', { required: true })} />
+                    </div>
+                    {errors.nombre?.type === 'required' &&
+                        <div className='errores'>Zona excursión obligatoria</div>
+                    }
+                    <div className="mb-3">
+                        <label className="form-label">Imagen</label>
+                        <input type="file" className="form-control" {...register('imagen', { required: true })} />
+                    </div>
+                    {errors.imagen?.type === 'required' &&
+                        <div className='errores'>Zona excursión obligatoria</div>
+                    }
+                    <div className="mb-3">
+                        <label className="form-label">Situación</label>
+                        <textarea className="form-control" rows="3" {...register('situacion', { required: true })}></textarea>
+                    </div>
+                    {errors.situacion?.type === 'required' &&
+                        <div className='errores'>Zona excursión obligatoria</div>
+                    }
+                    <div className="mb-3">
+                        <label className="form-label">Servicio</label>
+                        <textarea className="form-control" rows="3" {...register('servicio', { required: true })}></textarea>
+                    </div>
+                    {errors.servicio?.type === 'required' &&
+                        <div className='errores'>Zona excursión obligatoria</div>
+                    }
+                    <div className="mb-3">
+                        <label className="form-label">Precio excursión</label>
+                        <input type="number" className="form-control" {...register('precio', { required: true })} />
+                    </div>
+                    {errors.precio?.type === 'required' &&
+                        <div className='errores'>Zona excursión obligatoria</div>
+                    }
+                    <div className="mb-3">
+                        <button type="submit" className="btn btn-primary">Alta de excursión</button>
+                    </div>
                 </div>
             </form>
-        </>
+        </div>
     )
 }
