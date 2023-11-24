@@ -1,0 +1,10 @@
+.lista-rutas{
+    margin: 0 auto;
+    width: 75vw;
+    text-align: center;
+}
+
+.lista-rutas h1{
+    font-size: 2.5em;
+    margin: 45px;
+}

@@ -6,6 +6,7 @@ import { Excursiones } from '../Components/Excursiones';
 import { Rutas } from '../Components/Rutas';
 import { Detalle } from '../Components/Detalle';
 import { Alta } from '../Components/Alta';
+import { ListaRutas } from '../Components/ListaRutas';
 
 export function Router() {
     return (
@@ -17,6 +18,7 @@ export function Router() {
                 <Route path='/detalles/:id' element={<Detalle />} />
                 <Route path='/ruta' element={<Rutas />} />
                 <Route path='/alta' element={<Alta />} />
+                <Route path='lista-rutas' element={<ListaRutas />} />
                 <Route path='/*' element={<Navigate to='/' />} />
             </Routes>
         </>

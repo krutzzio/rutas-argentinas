@@ -17,9 +17,6 @@ export function Excursion({ info }) {
     const { listaRutas } = useContext(Context)
     const { setListaRutas } = useContext(Context)
 
-
-    console.log(info.idexcursion, listaRutas.some(elem => elem.idexcursion === info.idexcursion))
-
     const addedRute = listaRutas.find(excursion => {
         return excursion.idexcursion === info.idexcursion
     })

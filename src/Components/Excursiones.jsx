@@ -24,7 +24,6 @@ export function Excursiones() {
             .catch((error) => window.alert(error))
     }, [zona])
 
-    console.log(excursionAPI)
     return (
         <div className="excursionesComponent">
             <h1>EXCURSIONES</h1>
