@@ -29,7 +29,6 @@ export function Detalle() {
             .catch((error) => window.alert(error))
     }, [id])
 
-
     const NOMBRE_IMAGEN = excursionAPI.imagen
 
     const { setListaRutas } = useContext(Context)

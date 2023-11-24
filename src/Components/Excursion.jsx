@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 
 import InfoIcon from '@mui/icons-material/Info';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 
 export function Excursion({ info }) {
@@ -13,11 +15,15 @@ export function Excursion({ info }) {
     const img = require(`../images/${info.imagen}`)
 
     const { listaRutas } = useContext(Context)
+    const { setListaRutas } = useContext(Context)
+
+
+    console.log(info.idexcursion, listaRutas.some(elem => elem.idexcursion === info.idexcursion))
 
     const addedRute = listaRutas.find(excursion => {
         return excursion.idexcursion === info.idexcursion
     })
-    
+
     return (
         <div className="excursion">
             <div>
@@ -29,8 +35,15 @@ export function Excursion({ info }) {
             {
                 addedRute
                     ? (<div className="rute-in"><AttachFileIcon /><span className="added">Ruta añadida</span></div>)
-                    : <></>
+                    : (<></>)
             }
+
+            {
+                listaRutas.some(elem => elem.idexcursion === info.idexcursion)
+                    ? (<div className="claseExcursion eliminarExcursion" onClick={() => setListaRutas(listaRutas.filter(elem => elem.idexcursion !== info.idexcursion))}><RemoveIcon /><span className="added">Eliminar Ruta</span></div>)
+                    : (<div className="claseExcursion añadirExcursion" onClick={() => setListaRutas([...listaRutas, info])}><AddIcon /><span className="added">Añadir Ruta</span></div>)
+            }
+
         </div>
     )
 }
