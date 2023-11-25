@@ -1,4 +1,5 @@
 .Navbar {
+    position: relative;
     display: flex;
     justify-content:space-around;
     gap: 1em;
@@ -22,4 +23,17 @@
 
 .active{
     background-color: #b9b9b9;
+}
+
+.admin{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.65em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: initial;
+    height: 0;
+    width: 150px;
 }

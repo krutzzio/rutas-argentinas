@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useContext } from "react"
 import "./Alta.css"
-import Context from "../Context/Context"
+import Context from "../../Context/Context"
 
 export function Alta() {
 
@@ -48,7 +48,7 @@ export function Alta() {
     return (
         <div className="form">
             <form encType='multipart/form-data' onSubmit={handleSubmit(recuperarDatos)}>
-                <h1>Alta de excursión</h1>
+                <h1>ALTA DE EXCURSIÓN</h1>
                 <div className="form-quest">
                     <div className="mb-3">
                         <select className="form-select" {...register('idzona', { required: true })}>

@@ -1,10 +1,15 @@
 import "./ListaRutas.css"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import RemoveIcon from '@mui/icons-material/Remove';
+import Context from "../../Context/Context";
 
 export function ListaRutas() {
 
     const [excursionAPI, setExcursionAPI] = useState([])
+
+    const { setListaRutas } = useContext(Context)
+    const { listaRutas } = useContext(Context)
+
 
     useEffect(() => {
         const API_EXCURSIONES = `http://localhost:3000/api/excursiones`
@@ -21,28 +26,34 @@ export function ListaRutas() {
 
     const eliminarRutaTotal = (id) => {
 
-        setExcursionAPI(excursionAPI.filter(elem => elem.idexcursion !== id))
+        if (!window.confirm("Quieres eliminar esta ruta de la base de datos?")) {
+            return
+        } else {
 
-        const api = `http://localhost:3000/api/excursiones/${id}`
+            setExcursionAPI(excursionAPI.filter(elem => elem.idexcursion !== id))
+            setListaRutas(listaRutas.filter(elem => elem.idexcursion !== id))
 
-        const parametros = {
-            'method': 'DELETE',
-            'mode': 'cors'
+            const api = `http://localhost:3000/api/excursiones/${id}`
+
+            const parametros = {
+                'method': 'DELETE',
+                'mode': 'cors'
+            }
+
+            fetch(api, parametros)
+                .then(function (respuesta) {
+                    console.log(respuesta)
+                    if (respuesta.ok) {
+                        return respuesta.json()
+                    }
+                })
+                .then(function (mensaje) {
+                    console.log(mensaje)
+                })
+                .catch(function (error) {
+                    window.alert(error)
+                })
         }
-
-        fetch(api, parametros)
-            .then(function (respuesta) {
-                console.log(respuesta)
-                if (respuesta.ok) {
-                    return respuesta.json()
-                }
-            })
-            .then(function (mensaje) {
-                console.log(mensaje)
-            })
-            .catch(function (error) {
-                window.alert(error)
-            })
     }
 
 
