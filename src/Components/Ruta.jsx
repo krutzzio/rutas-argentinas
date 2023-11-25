@@ -12,7 +12,7 @@ export function Ruta({ excursion }) {
     return (
         <div className="ruta">
             <div className="info-ruta">
-                <img src={require(`../images/${excursion.imagen}`)} alt="Imagen de la excursion" />
+                <img src={`/images/${excursion.imagen}`} alt="Imagen de la excursion" />
                 <div className="more-info">
                     <h3>{excursion.nombre}</h3>
                     <h3>Precio: {excursion.precio}€</h3>

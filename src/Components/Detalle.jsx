@@ -38,7 +38,7 @@ export function Detalle() {
         <div className="detalles">
             <h1>{excursionAPI.nombre}</h1>
             <p>{excursionAPI.servicio}</p>
-            <img src={`../images/${NOMBRE_IMAGEN}`} alt={`Imagen de ${excursionAPI.nombre}`} />
+            <img src={`/images/${NOMBRE_IMAGEN}`} alt={`Imagen de ${excursionAPI.nombre}`} />
             <div className="precio">{`${excursionAPI.precio}€`}</div>
             {
                 listaRutas.find(elem => elem.idexcursion == id)

@@ -12,8 +12,6 @@ import RemoveIcon from '@mui/icons-material/Remove';
 
 export function Excursion({ info }) {
 
-    const img = require(`../images/${info.imagen}`)
-
     const { listaRutas } = useContext(Context)
     const { setListaRutas } = useContext(Context)
 
@@ -27,7 +25,7 @@ export function Excursion({ info }) {
                 <h2>{info.nombre}</h2>
                 <p>{info.situacion}</p>
             </div>
-            <img src={img} alt={`Imagen destino ${info.nombre}`} />
+            <img src={`/images/${info.imagen}`} alt={`Imagen destino ${info.nombre}`} />
             <Link className="link" to={`/detalles/${info.idexcursion}`}><InfoIcon /> <span>Más información</span></Link>
             {
                 addedRute

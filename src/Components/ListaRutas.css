@@ -8,3 +8,46 @@
     font-size: 2.5em;
     margin: 45px;
 }
+
+.boton-eliminar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#b02525;
+    width: 300px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.boton-eliminar:hover {
+    background-color: #7c0707;
+}
+
+.rutas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: #cfdee0;
+    height: 25vh;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+.rutas:hover{
+    box-shadow: 2px 2px 20px 3px #4d5657;
+}
+
+.rutas img {
+    height: 150px;
+    border-radius: 15px;
+}
+
+.info-rutas {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    gap: 1em;
+}

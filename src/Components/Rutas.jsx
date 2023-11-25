@@ -20,7 +20,7 @@ export function Rutas() {
     const imprimir = () => { window.print() }
 
     return (
-        <div className="rutas">
+        <div className="rutas-l">
             <h1>RUTAS</h1>
                 {
                     listaRutas.length !== 0
